@@ -1,0 +1,23 @@
+extends javascript
+
+snippet vueobj
+var $1 = new Vue({
+    el: $2
+    data: {
+        $3
+    }
+});
+$4
+endsnippet
+
+snippet vuecomp
+<template>
+    $1
+</template>
+
+<script>
+    export default {
+        $2
+    }
+</script>
+endsnippet

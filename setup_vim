@@ -1,0 +1,31 @@
+#! /bin/bash
+
+echo "This will remove and replace the following:"
+echo
+echo "~/.vim/custom_snips"
+echo "~/.vimrc"
+echo
+read -p "Continue? (y/n)" -n 1 -r
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+fi
+
+unlink ~/.vim/custom_snips
+if [ -d ~/.vim/custom_snips ]; then
+    rm -rf ~/.vim/custom_snips
+fi
+ln -s ~/Config-Vim/custom_snips/ ~/.vim/custom_snips
+
+unlink ~/.vimrc
+if [ -f ~/.vimrc ]; then
+    rm -f ~/.vimrc
+fi
+ln -s ~/Config-Vim/.vimrc ~/.vimrc
+
+#Vim plugin download
+mkdir -p ~/.vim/pack/plugins/start/
+cd ~/.vim/pack/plugins/start/
+for i in `cat ~/Config-Vim/pluginlist`; do
+    git clone $i;
+done
