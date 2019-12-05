@@ -3,6 +3,7 @@ syntax enable
 set cul
 set number
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+set backspace=indent,eol,start
 
 " -- Theme -- "
 "set t_Co=256
@@ -40,12 +41,12 @@ let mapleader=" "
 let maplocalleader=" "
 
 " -- Prevent us from developing bad habits -- "
-let g:hardtime_default_on = 1
-let g:hardtime_maxcount = 10
-let g:hardtime_ignore_quickfix = 1
-let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+"]
-let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+"]
-let g:list_of_insert_keys = []
+"let g:hardtime_default_on = 1
+"let g:hardtime_maxcount = 10
+"let g:hardtime_ignore_quickfix = 1
+"let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+"]
+"let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+"]
+"let g:list_of_insert_keys = []
 
 " -- Status Line -- "
 set laststatus=2
