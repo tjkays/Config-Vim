@@ -1,6 +1,6 @@
-" -- QoL -- "
+" -- QoL -- "                                                                                                                                     
 syntax enable
-set cul
+set cul 
 set number
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 set backspace=indent,eol,start
@@ -23,18 +23,19 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" -- Tabs -- "
+" -- Key maps -- "
+"|Tabs"
 nnoremap th :tabfirst<CR>
 nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap tl :tablast<CR>
 nnoremap td :tabclose<CR>
-
-" -- Key maps -- "
 "|Ctrl-Backspace in insert mode 
 imap <C-BS> <C-W>
 "|Redo with U instead of Ctrl+R
 noremap U <C-R>
+"|Toggle relative line numbers
+noremap <S-r> :set invrnu<CR>
 
 " -- Space as leader -- "
 let mapleader=" "
