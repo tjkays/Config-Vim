@@ -36,7 +36,7 @@ noremap U <C-R>
 "|Toggle relative line numbers
 noremap <S-r> :set invrnu<CR>
 "|Tagbar
-nmap <F8> :TagbarToggle<CR
+nmap <F8> :TagbarToggle<CR>
 
 " -- Space as leader -- "
 let mapleader=" "
