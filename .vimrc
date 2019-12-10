@@ -2,7 +2,6 @@
 syntax enable
 set cul 
 set number
-let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 set backspace=indent,eol,start
 
 " -- Theme -- "
@@ -59,3 +58,9 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetsDir="~/.vim/custom_snips"
 let g:UltiSnipsSnippetDirectories=["custom_snips"]
+
+" -- NetRW -- "
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+map <C-i> :Expl<CR>
