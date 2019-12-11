@@ -63,6 +63,7 @@ let g:UltiSnipsSnippetDirectories=["custom_snips"]
 
 " -- NetRW -- "
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+let g:netrw_browse_split=3
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 map <C-i> :Expl<CR>
@@ -73,5 +74,5 @@ augroup netrw_mapping
 augroup END
 
 function! NetrwMapping()
-    nnoremap <leader>t :tabnext<CR>
+    silent! unmap <buffer> t
 endfunction
