@@ -66,3 +66,12 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 map <C-i> :Expl<CR>
+
+augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+augroup END
+
+function! NetrwMapping()
+    nnoremap <leader>t :tabnext<CR>
+endfunction
