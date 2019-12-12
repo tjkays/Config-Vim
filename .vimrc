@@ -1,8 +1,9 @@
-" -- QoL -- "                                                                                                                                     
+" -- QoL -- " 
 syntax enable
 set cul 
 set number
 set backspace=indent,eol,start
+set noswapfile
 
 " -- Theme -- "
 "set t_Co=256
@@ -37,6 +38,12 @@ noremap U <C-R>
 noremap <S-r> :set invrnu<CR>
 "|Tagbar
 nmap <F8> :TagbarToggle<CR>
+"|To split vertically
+map <silent> <leader>h :vsplit<CR>
+map <silent> <leader>l :vsplit<CR>:wincmd l<CR>
+"|To split horizontally
+map <silent> <leader>j :split<CR>:wincmd j<CR>
+map <silent> <leader>k :split<CR>
 
 " -- Space as leader -- "
 let mapleader=" "
