@@ -4,6 +4,7 @@ set cul
 set number
 set backspace=indent,eol,start
 set noswapfile
+set path=$PWD/**
 
 " -- Theme -- "
 "set t_Co=256
@@ -39,11 +40,11 @@ noremap <S-r> :set invrnu<CR>
 "|Tagbar
 nmap <F8> :TagbarToggle<CR>
 "|To split vertically
-map <silent> <leader>h :vsplit<CR>
-map <silent> <leader>l :vsplit<CR>:wincmd l<CR>
+nmap <silent> <leader>h :vsplit<CR>
+nmap <silent> <leader>l :vsplit<CR>:wincmd l<CR>
 "|To split horizontally
-map <silent> <leader>j :split<CR>:wincmd j<CR>
-map <silent> <leader>k :split<CR>
+nmap <silent> <leader>j :split<CR>:wincmd j<CR>
+nmap <silent> <leader>k :split<CR>
 
 " -- Space as leader -- "
 let mapleader=" "
@@ -73,7 +74,13 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_browse_split=3
 let g:netrw_banner=0
 let g:netrw_liststyle=3
-map <C-i> :Expl<CR>
+map <C-i> :call NewExplorer()<CR>
+
+function! NewExplorer()
+    tabnew
+    Expl
+    tabmove 0
+endfunction
 
 augroup netrw_mapping
     autocmd!
