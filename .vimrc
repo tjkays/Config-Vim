@@ -1,6 +1,6 @@
-" -- QoL -- " 
+" -- QoL -- "
 syntax enable
-set cul 
+set cul
 set number
 set backspace=indent,eol,start
 set noswapfile
@@ -31,7 +31,7 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap tl :tablast<CR>
 nnoremap td :tabclose<CR>
-"|Ctrl-Backspace in insert mode 
+"|Ctrl-Backspace in insert mode
 imap <C-BS> <C-W>
 "|Redo with U instead of Ctrl+R
 noremap U <C-R>
@@ -94,11 +94,4 @@ endfunction
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-" Remove trailing whitespace on save
-fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+let g:htl_all_templates=1
