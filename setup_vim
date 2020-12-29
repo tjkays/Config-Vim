@@ -22,10 +22,3 @@ if [ -f ~/.vimrc ]; then
     rm -f ~/.vimrc
 fi
 ln -s ~/Config-Vim/.vimrc ~/.vimrc
-
-#Vim plugin download
-mkdir -p ~/.vim/pack/plugins/start/
-cd ~/.vim/pack/plugins/start/
-for i in `cat ~/Config-Vim/pluginlist`; do
-    git clone $i;
-done
