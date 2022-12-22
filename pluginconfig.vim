@@ -1,10 +1,8 @@
 call plug#begin('~/.vim/plugged')
-Plug 'mileszs/ack.vim'
 Plug 'itchyny/lightline'
 Plug 'Valloric/MatchTagAlways'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'tommcdo/vim-fugitive-blame-ext'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
 Plug 'posva/vim-vue'
@@ -14,6 +12,7 @@ Plug 'jonsmithers/vim-html-template-literals'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " -- Tagbar Config -- "
@@ -87,3 +86,13 @@ nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 nnoremap <silent>go :<C-u>CocList outline<cr>
 nnoremap <silent>gD :<C-u>CocList diagnostics<cr>
+
+" -- Editorconfig -- "
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" -- Lightline -- "
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
+      \ }

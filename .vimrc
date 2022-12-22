@@ -14,13 +14,27 @@ if !&diff
     autocmd BufReadPost * call setpos(".", getpos("'\""))
   augroup END
 endif
-
+set encoding=utf-8
 
 " -- Indentation -- "
 set expandtab
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set autoindent
+set listchars=tab:▷▷⋮
+"|Toggle expandtab
+function TabToggle()
+  if &expandtab
+    set shiftwidth=8
+    set softtabstop=0
+    set noexpandtab
+  else
+    set shiftwidth=2
+    set softtabstop=2
+    set expandtab
+  endif
+endfunction
+map <F9> :call TabToggle()<CR>
 
 " -- Splits -- "
 set splitright
@@ -52,6 +66,8 @@ nmap <silent> <leader>k :split<CR>
 "|Space as leader
 let mapleader=" "
 let maplocalleader=" "
+"|Toggle invlist
+noremap <Leader><Tab><Tab> :set invlist<CR>
 
 " -- Status Line -- "
 set laststatus=2
